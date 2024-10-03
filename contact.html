@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SR.Restaurant - Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div id="nav-top">
+            <img id="logo" src="./Image/O.JPG" alt="logo" style="width: 120px; height: 105px; margin-left: 2%;">
+        </div>
+        <nav>
+            <ul id="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="Menu.html">Menu</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2 style="color: #f6ca81;; font-size: 40px; text-align: center; margin-top: -0%; margin-left: 15%;">Contact Us</h2>
+        <h3 style="color: #ffff; font-size: 30px; text-align: center; margin-top: -3%; margin-left: -20%;">Feel free to send us a message with any questions or comments you have!</h3>
+        <body>
+            <div class="form-container">
+                <form id="contactForm">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+        
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+        
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+        
+                    <button type="submit">Send Message</button>
+                    <p id="formMessage" class="success" style="display: none;"></p>
+                </form>
+            </div>
+        </body>
+        
+    </main>
+    <footer style="background-color: #3f4d4a; color: #ffffff; padding: -10%; text-align: center;">
+        <p><strong>Contact SR Restaurant</strong></p>
+        <p>Address: 456 Culinary Avenue, Foodie City, Pakistan</p>
+        <p>Phone Number: +92 300 1234567</p>
+        <p>Email: <a href="mailto:contact@srrestaurant.com" style="color: #ecf0f1;">contact@srrestaurant.com</a></p>
+        <p>Follow us on social media for the latest updates and special offers!</p>
+        <p>&copy; 2024 SR Restaurant. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (name === "" || email === "" || message === "") {
+                alert("Please fill out all fields.");
+                return;
+            }
+
+            const formMessage = document.getElementById('formMessage');
+            formMessage.textContent = `Thank you, ${name}! Your message has been sent.`;
+            formMessage.style.display = 'block';
+
+            document.getElementById('contactForm').reset();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SR.Restaurant - Menu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div id="nav-top">
+            <img id="logo" src="./Image/O.JPG" alt="logo" style="width: 120px; height: 105px; margin-left: 2%;">
+        </div>
+        <nav>
+            <ul id="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="Menu.html">Menu</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <div id="serviceDescription"></div>
+        <h3 style="color: #f6ca81; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 40px; text-align: center; margin: 8%;">Welcome to Our Menu</h3>
+        <p style="width: 89%; font-size: 20px; color: aliceblue; text-align: center; margin-left: 5%; margin-top: -7%;" >Click on any of the categories above to explore our delicious offerings!</p>
+    </div>
+
+
+    <ul id="serviceList">
+        <li><button class="serviceBtn" data-service="bbq">BBQ</button></li>
+        <li><button class="serviceBtn" data-service="fastfood">Fast Foods</button></li>
+        <li><button class="serviceBtn" data-service="desi">Desi Dishes</button></li>
+        <li><button class="serviceBtn" data-service="drinks">Drinks</button></li>
+        <li><button class="serviceBtn" data-service="dessert">Dessert</button></li>
+    </ul>
+    <a href="MENU/Sr.Restaurant menu.pdf" download class="all-menus-btn">Download All Menus as PDF</a>
+    
+    <script>
+        const serviceData = {
+            bbq: {
+                title: "BBQ Menu",
+                description: "Our BBQ dishes are grilled to perfection, with juicy meats and a smoky flavor that will tantalize your taste buds.",
+                image: "Image/Dark Brown Simple Barbeque Menu.png"
+                
+            },
+            fastfood: {
+                title: "Fast Food Menu ",
+                description: "Our fast food menu includes crispy fries, juicy burgers, and a variety of delicious snacks to satisfy your hunger.",
+                image: "Image/Untitled design.png" 
+            },
+            desi: {
+                title: "Desi Dishes",
+                description: "Enjoy our authentic Desi cuisine, made with traditional spices and recipes passed down through generations.",
+                image: "Image/Dark Green Modern Coffee Shop Menu.png"
+            },
+            drinks: {
+                title: "Drinks",
+                description: "Savor our expertly crafted coffee, brewed with passion and sourced from the finest beans around the world.",
+                image: "Image/_Modern Coffee Shop Menu.jpg" 
+            },
+            dessert: {
+                title: "Dessert",
+                description: "Indulge in our delightful desserts, where every bite is a perfect balance of sweetness and flavor.",
+                image: "Image/Pink Minimalist Special Dessert Menu.png" 
+            }
+        };
+
+        const buttons = document.querySelectorAll('.serviceBtn');
+        const descriptionDiv = document.getElementById('serviceDescription');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', function() {
+                const serviceKey = this.getAttribute('data-service');
+                const service = serviceData[serviceKey];
+
+                descriptionDiv.innerHTML = `
+                    <h3>${service.title}</h3>
+                    <p>${service.description}</p>
+                    <img src="${service.image}" alt="${service.title}">
+                `;
+            });
+        });
+    </script>
+
+</body>
+</html>
+
