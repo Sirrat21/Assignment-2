@@ -12,16 +12,16 @@ body {
 }
 header {
     display: flex;
-    justify-content: space-between;  /* Space between logo and nav */
+    justify-content: space-between;  
     align-items: center;
     padding: 10px 5%;
-    background-color: #3f4d4a;  /* Matches nav background */
+    background-color: #3f4d4a;  
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
     box-shadow: 0px 4px 8px #3f4d4a;
-    height: 120px;  /* Adjust height to accommodate both logo and nav */
+    height: 120px;  
 }
 #logo{
     border: 5px solid #3f4d4a;
@@ -54,15 +54,14 @@ header {
     margin-right: 0;
 }
 
-/* Fixed width for nav-links */
 #nav-links a {
     text-decoration: none;
     color: #ffffff;
     transition: color 0.2s ease;
-    display: inline-block;
-    width: 85px;  /* Fixed width for each link */
+    display: inline-block; 
+    width: 85px; 
     text-align: center;
-    padding: 15px 0; /* Adjusts padding for a more even look */
+    padding: 15px 0; 
 }
 
 #nav-links a:hover {
